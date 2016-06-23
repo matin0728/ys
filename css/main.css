@@ -1,0 +1,419 @@
+/*
+ * HTML5 Boilerplate
+ *
+ * What follows is the result of much research on cross-browser styling.
+ * Credit left inline and big thanks to Nicolas Gallagher, Jonathan Neal,
+ * Kroc Camen, and the H5BP dev community and team.
+ */
+
+/* ==========================================================================
+   Base styles: opinionated defaults
+   ========================================================================== */
+
+html,
+button,
+input,
+select,
+textarea {
+    color: #222;
+}
+
+body {
+    font-size: 1em;
+    line-height: 1.4;
+}
+
+a {
+    color: #00e;
+    text-decoration: none;
+}
+
+a:visited {
+    color: #551a8b;
+}
+
+a:hover {
+    color: #06e;
+}
+
+/*
+ * Remove the gap between images and the bottom of their containers: h5bp.com/i/440
+ */
+
+img {
+    vertical-align: middle;
+}
+
+/*
+ * Remove default fieldset styles.
+ */
+
+fieldset {
+    border: 0;
+    margin: 0;
+    padding: 0;
+}
+
+/*
+ * Allow only vertical resizing of textareas.
+ */
+
+textarea {
+    resize: vertical;
+}
+
+/* ==========================================================================
+   Author's custom styles
+   ========================================================================== */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* ==========================================================================
+   Helper classes
+   ========================================================================== */
+
+/* Prevent callout */
+
+.nocallout {
+    -webkit-touch-callout: none;
+}
+
+.pressed {
+    background-color: rgba(0, 0, 0, 0.7);
+}
+
+/* A hack for HTML5 contenteditable attribute on mobile */
+
+textarea[contenteditable] {
+    -webkit-appearance: none;
+}
+
+/* A workaround for S60 3.x and 5.0 devices which do not animated gif images if
+   they have been set as display: none */
+
+.gifhidden {
+    position: absolute;
+    left: -100%;
+}
+
+/*
+ * Image replacement
+ */
+
+.ir {
+    background-color: transparent;
+    background-repeat: no-repeat;
+    border: 0;
+    direction: ltr;
+    display: block;
+    overflow: hidden;
+    text-align: left;
+    text-indent: -999em;
+}
+
+.ir br {
+    display: none;
+}
+
+/*
+ * Hide from both screenreaders and browsers: h5bp.com/u
+ */
+
+.hidden {
+    display: none !important;
+    visibility: hidden;
+}
+
+/*
+ * Hide only visually, but have it available for screenreaders: h5bp.com/v
+ */
+
+.visuallyhidden {
+    border: 0;
+    clip: rect(0 0 0 0);
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+    width: 1px;
+}
+
+/*
+ * Extends the .visuallyhidden class to allow the element to be focusable
+ * when navigated to via the keyboard: h5bp.com/p
+ */
+
+.visuallyhidden.focusable:active,
+.visuallyhidden.focusable:focus {
+    clip: auto;
+    height: auto;
+    margin: 0;
+    overflow: visible;
+    position: static;
+    width: auto;
+}
+
+/*
+ * Hide visually and from screenreaders, but maintain layout
+ */
+
+.invisible {
+    visibility: hidden;
+}
+
+/**
+ * Clearfix helper
+ * Used to contain floats: h5bp.com/q
+ */
+
+.clearfix:before,
+.clearfix:after {
+    content: "";
+    display: table;
+}
+
+.clearfix:after {
+    clear: both;
+}
+
+/* ==========================================================================
+   EXAMPLE Media Queries for Responsive Design.
+   Theses examples override the primary ('mobile first') styles.
+   Modify as content requires.
+   ========================================================================== */
+
+@media only screen and (min-width: 800px) {
+    /* Style adjustments for viewports that meet the condition */
+}
+
+@media only screen and (-webkit-min-device-pixel-ratio: 1.5),
+       only screen and (min-resolution: 144dpi) {
+    /* Style adjustments for viewports that meet the condition */
+}
+
+
+/* share to friend */
+
+.friend .head {
+  background: transparent url('../img/sharebgone@2x.jpg') no-repeat 0 0;
+  background-size: cover;
+  position: relative;
+  padding-top: 111px;
+  min-height: 556px; /* 667 - 111 */
+}
+
+.friend .logo {
+  background: transparent url('../img/sharelogoone@2x.png') no-repeat 0 0;
+  background-size: 110px 110px;
+  display: block;
+  width: 110px;
+  height: 110px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.friend .title {
+  font-size: 28px;
+  font-weight: bold;
+  display: block;
+  text-align: center;
+  line-height: 1;
+  margin-top: 30px;
+  color: #fff;
+}
+
+.friend .download {
+  width: 185px;
+  height: 37px;
+  border-radius: 4px;
+  display: block;
+  margin: 114px auto 0 auto;
+  text-align: center;
+  background-color: #fff;
+  font-size: 18px;
+  color: #fb4747;
+  line-height: 36px;
+  padding: 8px 0 8px;
+}
+
+.friend .download .icon {
+  background: transparent url('../img/shareappleicon@2x.png') no-repeat 0 0;
+  background-size: 30px 34px;
+  display: inline-block;
+  width: 30px;
+  height: 34px;
+  vertical-align: bottom;
+  margin-right: 10px;
+}
+
+.friend .content {
+  background: transparent url('../img/sharebgtwo@2x.jpg') no-repeat 0 0;
+  background-size: cover;
+  height: 2668px;
+}
+/*
+.friend .content .logo {
+  background: transparent url('../img/sharelogoone@2x.png') no-repeat 0 0;
+  background-size: 67px 67px; 
+  width: 67px;
+  height: 67px;
+  margin: 31px 0 0 38px;
+}
+
+.friend .content .subtitle {
+  font-size: 21px;
+  font-weight: bold;
+  color: #df282c;
+}*/
+
+.friend .content {
+  position: relative;
+}
+
+.friend .foot {
+  position: absolute;
+  width: 100%;
+  bottom: 45px;
+  text-align: center;
+}
+
+.friend .foot .download {
+  display: inline-block;
+}
+
+/* Show Page */
+.show h1 {
+  font-size: 17px;
+  padding: 20px 15px 0;
+  line-height: 1;
+  margin: 0;
+}
+
+.show .info {
+  font-size: 11px;
+  color: #666;
+  line-height: 1;
+  margin: 10px 15px;
+}
+
+.show .section {
+  font-size: 12px;
+  color: #666;
+  height: 30px;
+  text-indent: 15px;
+  line-height: 30px;
+  background: #f0f0f0;
+}
+
+.highlight {
+  font-size: 17px;
+  color: #fb4747;
+}
+
+.list-table {
+  font-size: 13px;
+  margin: 9px;
+}
+
+.list-table th, .list-table td {
+  padding: 6px;
+  font-weight: normal;
+}
+
+.list-table th {
+  white-space: nowrap;
+}
+
+p {
+  font-size: 15px;
+  margin: 12px 15px;
+}
+
+.publisher {
+  display: flex;
+  font-size: 12px;
+  color: #666;
+  flex-direction: row;
+  align-items: center;
+  padding: 15px;
+}
+
+.publisher .avatar {
+  width: 32px;
+  height: 32px;
+  border-radius: 2px;
+  display: flex;
+}
+
+.publisher .name {
+  display: flex;
+  flex: auto;
+}
+
+.publisher .num {
+  display: flex; 
+}
+
+.devider {
+  background: #f0f0f0;
+  height: 5px;
+  width: 100%;
+}
+
+.friends_view {
+  font-size: 15px;
+  color: #666;
+  padding:0 15px;
+}
+
+.friends_view h2 {
+  color: #000;
+  margin: 0;
+  height: 45px;
+  line-height: 45px;
+  border-bottom: solid 1px #d2d2d2;
+  font-weight: normal;
+  font-size: 15px;
+}
+
+.friends_view h2 .info {
+  float: right;
+  color: #fb4747;
+  margin: 16px 0 0 0;
+  font-size: 15px;
+}
+
+.friends_view .item {
+  padding: 8px 0;
+  line-height: 1;
+}
+
+.friends_view .item .num {
+  float: right;
+}
+
+
+
+
+
+
+
+
+
+
+
