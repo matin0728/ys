@@ -207,7 +207,9 @@ textarea[contenteditable] {
     /* Style adjustments for viewports that meet the condition */
 }
 
-
+.main {
+  padding-bottom: 60px;
+}
 /* share to friend */
 
 .friend .head {
@@ -406,6 +408,227 @@ p {
 .friends_view .item .num {
   float: right;
 }
+
+.space {
+  font-size: 13px;
+}
+
+.space .carousel {
+  height: 80%;
+  background: #ccc;
+  display: flex;
+  
+}
+
+.space .carousel .item {
+  display: flex;
+  flex: 1 0.8 auto;
+}
+
+.space .name-card {
+  display: flex;
+  align-items: center;
+  padding: 31px 0;
+}
+
+.space .section {
+  padding: 0 15px;
+}
+
+.space .section.bordered {
+  border-bottom: solid 1px #d2d2d2;
+}
+
+.space .name-card .name {
+  font-size: 17px;
+}
+
+.space .name-card .location {
+  font-size: 12px;
+  color: #666;
+}
+
+.space .name-card .info {
+  flex: auto;
+  text-align: right;
+  font-size: 12px;
+  color: #666;
+}
+
+.space .category {
+  display: flex;
+  align-items: center;
+  padding: 5px 0;
+}
+
+.space .category .title {
+  color: #999;
+  margin-right: 5px;
+}
+
+.space .category .content{
+  flex: auto;
+}
+
+.space .cate {
+  display: inline-block;
+  width: 65px;
+  height: 21px;
+  border-radius: 2px;
+  line-height: 21px;
+  font-size: 11px;
+  margin: 6px;
+  text-align: center;
+}
+
+.space .cate-list {
+  padding: 4px;
+}
+
+.space .main-cate .cate {
+  color: red;
+  background: #fdc6d9
+}
+
+.space .second-cate .cate {
+  color: green;
+  background: #b4ebea;
+}
+
+.space .fee {
+  color: #999;
+  font-size: 13px;
+  padding:13px 0;
+}
+
+.space .fee .highlight {
+  display: inline;
+  margin-left: 15px;
+}
+
+.space .section-title {
+  display: flex;
+  height: 30px;
+  font-size: 12px;
+  color: #666; 
+  line-height: 30px;
+  background: #f0f0f0;
+}
+
+.space .section-title .title {
+  flex: auto;
+}
+
+.space .member-info {
+  display: flex;
+  font-size: 12px;
+  padding: 12px 0;
+}
+
+.space .member-info .item {
+  flex: auto;
+
+}
+
+.space .member-info .highlight, .space .member-info .text {
+  text-align: center;
+  display: block;
+}
+
+.space .video-list {
+  margin-top: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+  flex-wrap: wrap;
+  flex-flow: row wrap;
+  align-content: space-around;
+}
+
+.space .video-list a, .space .video-list img {
+  display: block;
+  width: 148px;
+  height: 95px;
+  margin: 5px 15px;
+}
+
+.space .video-list img {
+  margin: 0;
+}
+
+.space .list-table th {
+  font-size: 15px;
+  color: #999;
+}
+
+.space .list-table td {
+  font-size: 15px;
+}
+  
+/* footer */
+a.footer, a.footer:hover, a.footer:active {
+  color: #000;
+}
+
+.footer {
+  display: flex;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  height: 60px;
+  align-items: center;
+  background: #f8f8f8;
+}
+
+.footer .logo {
+  width: 32px;
+  height: 32px;
+  background: transparent url('../img/sharelogoone@2x.png') no-repeat 0 0;
+  background-size: 32px 32px;
+  margin-left: 15px;
+}
+
+.footer .slogen {
+  font-size: 14px;
+  flex: auto;
+  margin-left: 10px;
+}
+
+.footer .download-link {
+  width: 65px;
+  height: 30px;
+  background: #fb4747;
+  text-align: center;
+  color: #fff;
+  line-height: 30px;
+  font-size: 13px;
+  border-radius: 4px;
+  margin-right: 15px;
+}
+
+.footer .site {
+  margin-left: 10px;
+  flex: auto;
+}
+
+.footer .site .name {
+  font-size: 18px;
+}
+
+.footer .site .extra {
+  font-size: 15px;
+}
+
+
+
+
+
+
+
+
+
+
 
 
 
