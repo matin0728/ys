@@ -413,16 +413,49 @@ p {
   font-size: 13px;
 }
 
-.space .carousel {
-  height: 80%;
-  background: #ccc;
-  display: flex;
-  
+.space .swipe-container {
+  height: 375px;
+  position: relative;
 }
 
-.space .carousel .item {
-  display: flex;
-  flex: 1 0.8 auto;
+.slick-dots {
+  position: absolute;
+  bottom: -45px;
+  display: block;
+  width: 100%;
+  padding: 0;
+  list-style: none;
+  text-align: center;
+}
+
+.slick-dots li {
+  position: relative;
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  margin: 0 5px;
+  padding: 0;
+  cursor: pointer;
+}
+
+.slick-dots li button {
+  font-size: 0;
+  line-height: 0;
+  display: block;
+  width: 20px;
+  height: 20px;
+  padding: 5px;
+  cursor: pointer;
+  color: transparent;
+  border: 0;
+  outline: none;
+  background: transparent;
+}
+
+.space .swiper-slide img {
+  height: 375px;
+  display: block;
+  width: 100%;
 }
 
 .space .name-card {
@@ -686,8 +719,6 @@ a.footer, a.footer:hover, a.footer:active {
 .footer .site .extra {
   font-size: 15px;
 }
-
-
 
 
 

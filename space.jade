@@ -7,12 +7,27 @@ html(lang="en")
     meta(charset="utf-8")
 
     link(rel="stylesheet", href="css/normalize.css", type="text/css")
+    link(rel="stylesheet", href="css/swipebox.min.css", type="text/css")
+    link(rel="stylesheet", href="//cdn.jsdelivr.net/jquery.slick/1.6.0/slick.css", type="text/css")
+    link(rel="stylesheet", href="//cdn.jsdelivr.net/jquery.slick/1.6.0/slick.css", type="text/css")
     link(rel="stylesheet", href="css/main.css", type="text/css")
 
   body.app.nocallout
     .main.space
-      .carousel
-        .item xxx
+      .swipe-container
+        .swiper-wrapper
+          .swiper-slide
+            a.swipebox(href="http://k.sinaimg.cn/n/auto/20160620/AjJr-fxtfrrc3949028.jpg/w540h360t508f7.jpg")
+              img(src="http://k.sinaimg.cn/n/auto/20160620/AjJr-fxtfrrc3949028.jpg/w540h360t508f7.jpg")
+          .swiper-slide
+            a.swipebox(href="http://n.sinaimg.cn/news/transform/20160630/WDfZ-fxtsats1333494.jpg")
+              img(src="http://n.sinaimg.cn/news/transform/20160630/WDfZ-fxtsats1333494.jpg")                
+          .swiper-slide
+            a.swipebox(href="http://k.sinaimg.cn/n/auto/20160620/AjJr-fxtfrrc3949028.jpg/w540h360t508f7.jpg")
+              img(src="http://k.sinaimg.cn/n/auto/20160620/AjJr-fxtfrrc3949028.jpg/w540h360t508f7.jpg")
+          .swiper-slide
+            a.swipebox(href="http://n.sinaimg.cn/news/transform/20160630/WDfZ-fxtsats1333494.jpg")
+              img(src="http://n.sinaimg.cn/news/transform/20160630/WDfZ-fxtsats1333494.jpg")
 
       .section.bordered
         .name-card
@@ -80,7 +95,7 @@ html(lang="en")
         a(href="")
           img(src="http://k.sinaimg.cn/n/auto/20160620/AjJr-fxtfrrc3949028.jpg/w540h360t508f7.jpg")
         a(href="")
-          img(src="http://k.sinaimg.cn/n/auto/20160620/AjJr-fxtfrrc3949028.jpg/w540h360t508f7.jpg")
+          img(src="http://n.sinaimg.cn/news/transform/20160630/WDfZ-fxtsats1333494.jpg")
         a(href="")
           img(src="http://k.sinaimg.cn/n/auto/20160620/AjJr-fxtfrrc3949028.jpg/w540h360t508f7.jpg")
         a(href="")
@@ -118,6 +133,23 @@ html(lang="en")
     a.footer(href="")
       .logo
       .slogen 移动端艺人资料 &middot; 新标准                          
+    
+    script(src="//code.jquery.com/jquery-1.11.0.min.js")
+    script(src="//code.jquery.com/jquery-migrate-1.2.1.min.js")
+    script(src="//cdn.jsdelivr.net/jquery.slick/1.6.0/slick.min.js")
+    script(src="js/jquery.swipebox.min.js")
+    script.
+      $(document).ready(function(){
+        $('.swiper-wrapper').slick({
+          autoplay: true,
+          arrows: false
+
+        });
+      });
+
+      (function( $ ) {
+        $( '.swipebox' ).swipebox();
+      } )( jQuery );
 
 
 
