@@ -509,12 +509,12 @@ p {
 }
 
 .space .main-cate .cate {
-  color: red;
-  background: #fdc6d9
+  color: #c51954;
+  background: #fdc6d9;
 }
 
 .space .second-cate .cate {
-  color: green;
+  color: #037774;
   background: #b4ebea;
 }
 
