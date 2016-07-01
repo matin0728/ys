@@ -104,6 +104,26 @@ html(lang="en")
           img(src="http://k.sinaimg.cn/n/auto/20160620/AjJr-fxtfrrc3949028.jpg/w540h360t508f7.jpg")
 
       a.section.section-title(href="/")
+        .icon.spaceprogram
+        .title 主要节目及作品
+        .more
+
+      .section
+        p
+          span.program 大变活驴
+          span.program 千手观音
+          span.program 口呑大宝剑
+          span.program 大变活驴
+          span.program 千手观音
+          span.program 口呑大宝剑
+          span.program 大变活驴
+          span.program 千手观音
+          span.program 口呑大宝剑
+          span.program 大变活驴
+          span.program 千手观音
+          span.program 口呑大宝剑
+
+      a.section.section-title(href="/")
         .icon.spaceresume
         .title 简介
         .more
@@ -130,9 +150,12 @@ html(lang="en")
           th 公司院团 
           td 北京爱乐文化传媒有限公司
 
-    a.footer(href="")
+    a.footer.open-modal(href="#")
       .logo
-      .slogen 移动端艺人资料 &middot; 新标准                          
+      .slogen 移动端艺人资料 &middot; 新标准
+
+    a.global-hint-modal(href="javascript:;")
+      img.arrow(src="img/icon/bubble@2x.png")
     
     script(src="//code.jquery.com/jquery-1.11.0.min.js")
     script(src="//code.jquery.com/jquery-migrate-1.2.1.min.js")
@@ -150,6 +173,31 @@ html(lang="en")
       (function( $ ) {
         $( '.swipebox' ).swipebox();
       } )( jQuery );
+
+      function isWeixin(){
+          var ua = navigator.userAgent.toLowerCase();
+          if(ua.match(/MicroMessenger/i)=="micromessenger"){ return true; } else{
+          return false; 
+        } 
+      }
+
+      var closeModal = document.querySelector('.global-hint-modal');
+      if (closeModal) {
+        closeModal.onclick = function() {
+          var m = document.querySelector('.global-hint-modal');
+          m.style.display = "none";
+        };
+      }
+
+      var openModal = document.querySelector('.open-modal');
+      if (openModal && isWeixin()) {
+        openModal.onclick = function(e) {
+          e.preventDefault();
+          var modal = document.querySelector('.global-hint-modal');
+          modal.style.display = "block";
+          return false;
+        }
+      }
 
 
 
