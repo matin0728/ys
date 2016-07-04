@@ -264,9 +264,9 @@ textarea[contenteditable] {
 }
 
 .friend .content {
-  background: transparent url('../img/sharebgtwo@2x.jpg') no-repeat 0 0;
-  background-size: cover;
-  height: 2668px;
+  background: transparent url('../img/sharebgtwo@2x.jpg') no-repeat 50% 0;
+  background-size: 375px 2299px;
+  height: 2299px;
 }
 /*
 .friend .content .logo {
