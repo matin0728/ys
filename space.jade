@@ -8,8 +8,7 @@ html(lang="en")
 
     link(rel="stylesheet", href="css/normalize.css", type="text/css")
     link(rel="stylesheet", href="css/swipebox.min.css", type="text/css")
-    link(rel="stylesheet", href="//cdn.jsdelivr.net/jquery.slick/1.6.0/slick.css", type="text/css")
-    link(rel="stylesheet", href="//cdn.jsdelivr.net/jquery.slick/1.6.0/slick.css", type="text/css")
+    link(rel="stylesheet", href="http://cdn.jsdelivr.net/jquery.slick/1.6.0/slick.css", type="text/css")
     link(rel="stylesheet", href="css/main.css", type="text/css")
 
   body.app.nocallout
@@ -18,16 +17,16 @@ html(lang="en")
         .swiper-wrapper
           .swiper-slide
             a.swipebox(href="http://k.sinaimg.cn/n/auto/20160620/AjJr-fxtfrrc3949028.jpg/w540h360t508f7.jpg")
-              img(style="width:100%;background:url('http://k.sinaimg.cn/n/auto/20160620/AjJr-fxtfrrc3949028.jpg/w540h360t508f7.jpg') no-repeat 0 0;background-size:contain")
+              img(style="background:#333 url('http://k.sinaimg.cn/n/auto/20160620/AjJr-fxtfrrc3949028.jpg/w540h360t508f7.jpg') no-repeat 50% 0;background-size:contain")
           .swiper-slide
             a.swipebox(href="http://k.sinaimg.cn/n/auto/20160620/AjJr-fxtfrrc3949028.jpg/w540h360t508f7.jpg")
-              img(style="background:url('http://k.sinaimg.cn/n/auto/20160620/AjJr-fxtfrrc3949028.jpg/w540h360t508f7.jpg') no-repeat 0 0;background-size:contain")
+              img(style="background:#333 url('http://k.sinaimg.cn/n/auto/20160620/AjJr-fxtfrrc3949028.jpg/w540h360t508f7.jpg') no-repeat 50% 0;background-size:contain")
           .swiper-slide
             a.swipebox(href="http://k.sinaimg.cn/n/auto/20160620/AjJr-fxtfrrc3949028.jpg/w540h360t508f7.jpg")
-              img(style="background:url('http://k.sinaimg.cn/n/auto/20160620/AjJr-fxtfrrc3949028.jpg/w540h360t508f7.jpg') no-repeat 0 0;background-size:contain")
+              img(style="background:#333 url('http://k.sinaimg.cn/n/auto/20160620/AjJr-fxtfrrc3949028.jpg/w540h360t508f7.jpg') no-repeat 50% 0;background-size:contain")
           .swiper-slide
             a.swipebox(href="http://k.sinaimg.cn/n/auto/20160620/AjJr-fxtfrrc3949028.jpg/w540h360t508f7.jpg")
-              img(style="background:(url'http://k.sinaimg.cn/n/auto/20160620/AjJr-fxtfrrc3949028.jpg/w540h360t508f7.jpg') no-repeat 0 0;background-size:contain")
+              img(style="background:#333 (url'http://k.sinaimg.cn/n/auto/20160620/AjJr-fxtfrrc3949028.jpg/w540h360t508f7.jpg') no-repeat 50% 0;background-size:contain")
 
 
 
@@ -167,7 +166,8 @@ html(lang="en")
       $(document).ready(function(){
         $('.swiper-wrapper').slick({
           autoplay: true,
-          arrows: false
+          arrows: false,
+          dots: true
 
         });
       });
