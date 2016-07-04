@@ -414,8 +414,15 @@ p {
 }
 
 .space .swipe-container {
-  height: 375px;
+  height: 211px;
   position: relative;
+  overflow: hidden;
+}
+
+.space .swipe-container img {
+  width: 100%;
+  display: block;
+  height: 211px;
 }
 
 .slick-dots {
