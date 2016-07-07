@@ -463,6 +463,31 @@ textarea[contenteditable] {
   margin-right: 10px;
 }
 
+.friend .download2 {
+	width: 185px;
+	height: 37px;
+	border-radius: 4px;
+	display: block;
+	margin: 114px auto 0 auto;
+	text-align: center;
+	background-color: #fff;
+	font-size: 18px;
+	color: #fb4747;
+	line-height: 36px;
+	padding: 8px 0 8px;
+}
+
+.friend .download2 .icon {
+	background: transparent url('../img/shareappleicon@2x.png') no-repeat 0
+		0;
+	background-size: 30px 34px;
+	display: inline-block;
+	width: 30px;
+	height: 34px;
+	vertical-align: bottom;
+	margin-right: 10px;
+}
+
 .friend .content {
   background: transparent url('../img/sharebgtwo@2x.jpg') no-repeat 50% 0;
   background-size: 375px 2299px;
@@ -490,12 +515,16 @@ textarea[contenteditable] {
 .friend .foot {
   position: absolute;
   width: 100%;
-  bottom: 45px;
+  bottom: 10px;
   text-align: center;
 }
 
 .friend .foot .download {
   display: inline-block;
+}
+
+.friend .foot .download2 {
+   display: inline-block;
 }
 
 /* Show Page */
@@ -874,8 +903,8 @@ p {
 .space .video-list {
   margin-top: 10px;
   display: flex;
-  align-items: center;
-  justify-content: center;
+  align-items: justify;
+  justify-content: justify;
   flex-direction: row;
   flex-wrap: wrap;
   flex-flow: row wrap;
@@ -884,9 +913,9 @@ p {
 
 .space .video-list a, .space .video-list img {
   display: block;
-  width: 148px;
+  width: 170px;
   height: 95px;
-  margin: 5px 15px;
+  margin: 10px 15px;
 }
 
 .space .video-list img {
