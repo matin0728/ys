@@ -685,6 +685,7 @@ p {
   height: 12px;
   background: transparent url('../img/icon/men@2x.png') no-repeat 0 0;
   background-size: 12px 12px;
+  margin:0 9px;
 }
 
 .space .star {
@@ -694,6 +695,15 @@ p {
   background-size: 50px 16px;
   margin:0 9px;
 }
+
+.space .daren {
+  width: 50px;
+  height: 16px;
+  background: transparent url('../img/icon/yankeman@2x.png') no-repeat 0 0;
+  background-size: 50px 16px;
+  margin:0 9px;
+}
+
 
 .space .section {
   padding: 0 15px;
