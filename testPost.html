@@ -1,0 +1,76 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>Spring Authorization Manager Demo</title>
+    <script src="http://lib.sinaapp.com/js/jquery/1.9.1/jquery-1.9.1.min.js"></script>
+</head>
+<body>
+
+
+用户名：<input type="text" id="username"><br />
+密码：<input type="text" id="password"><br />
+sms_code：<input type="text" id="sms_code"><br />
+<input type="button" value="获取验证码" id="sms" />
+<input type="button" value="注册" id="register" />
+
+
+结果：
+<p id="result" style="color:red;"></p>
+
+演示方式：<br />
+<ol>
+  <li>点击[查看登录用户名]按钮，提示"未登录"。</li>
+  <li>在[用户名]输入框中填入用户名，点击[登录]按钮（用户名可随意填写），得到令牌。</li>
+  <li>在[令牌]输入框中填入刚才获得的令牌，点击[查看登录用户名]按钮，会出现刚才输入的用户名。</li>
+  <li>在[令牌]输入框中填入刚才获得的令牌，点击[退出登录]按钮，提示"退出登录成功"。</li>
+  <li>在[令牌]输入框中填入刚才获得的令牌，点击[查看登录用户名]按钮，提示"未登录"。</li>
+</ol>
+
+</body>
+<script>
+  $(document).ready(function(){
+	  
+	    $("#sms").click(function() {
+	        var username = $("#username").val();
+	        $.ajax({
+	          type: 'GET',
+	          url: 'http://192.168.8.101/yanke-invite/sms/send/'+username ,
+			  dataType: 'JSONP',//加入这个选项即可
+	          success: function(data) {
+	            $("#result").text(eval(data));
+	          },
+	          headers: {
+	            "authorization" : '123456789'
+	          }
+	        });
+	      });
+	    
+    $("#register").click(function() {
+      var username = $("#username").val();
+      var password = $("#password").val();
+      var sms_code = $("#sms_code").val();
+      $.ajax({
+        type: 'POST',
+        url: 'http://localhost/yanke-invite/user/register' ,
+		data: {
+            "username" : username,
+        	"password" : password,
+        	"sms_code" : sms_code
+          },
+		dataType: 'JSONP',//加入这个选项即可
+        success: function(data) {
+          $("#result").text(eval(data));
+          $("#username").val('');
+        },
+        headers: {
+          "authorization" : '123456789'
+        },
+      
+      });
+    });
+    
+
+
+  });
+</script>
+</html>
