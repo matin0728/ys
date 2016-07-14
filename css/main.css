@@ -589,6 +589,7 @@ p {
   height: 32px;
   border-radius: 2px;
   display: flex;
+  margin-right: 10px;
 }
 
 .publisher .name {
