@@ -412,6 +412,10 @@ textarea[contenteditable] {
 }
 /* share to friend */
 
+.main.friend{
+  padding-bottom: 0;
+}
+
 .friend .head {
   background: transparent url('../img/sharebgone@2x.jpg') no-repeat 0 0;
   background-size: cover;
@@ -468,7 +472,7 @@ textarea[contenteditable] {
 	height: 37px;
 	border-radius: 4px;
 	display: block;
-	margin: 114px auto 0 auto;
+	margin: 0 auto;
 	text-align: center;
 	background-color: #fff;
 	font-size: 18px;
@@ -490,8 +494,8 @@ textarea[contenteditable] {
 
 .friend .content {
   background: transparent url('../img/sharebgtwo@2x.jpg') no-repeat 50% 0;
-  background-size: 375px 2299px;
-  height: 2299px;
+  background-size: 375px 2430px;
+  height: 2430px;
 }
 /*
 .friend .content .logo {
@@ -515,7 +519,7 @@ textarea[contenteditable] {
 .friend .foot {
   position: absolute;
   width: 100%;
-  bottom: 10px;
+  bottom: 40px;
   text-align: center;
 }
 
@@ -1006,7 +1010,21 @@ a.footer, a.footer:hover, a.footer:active {
 
 
 
+@media screen and (min-width: 600px) { 
+  body {
+    background: #f5f6f7;
+  }
+  .main {
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+    background: #fff;
+  }
 
+  .main.friend {
+    max-width: 375px;
+  }
+}
 
 
 
