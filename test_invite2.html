@@ -1,0 +1,55 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>Spring Authorization Manager Demo</title>
+    <script src="http://lib.sinaapp.com/js/jquery/1.9.1/jquery-1.9.1.min.js"></script>
+</head>
+<body>
+
+手机号码：<input type="text" id="username_login"><br />
+密码：<input type="password" id="password_login"><br />
+<input type="button" value="登录" id="login" /><br />
+<input type="button" value="退出登录" id="logout" /><br />
+
+sessionToken：<input type="text" id="session_token"><br />
+<input type="button" value="获取邀请码" id="add" /><br />
+<input type="button" value="列出邀请码" id="list" /><br />
+结果：
+<p id="result_login" style="color:red;"></p></br>
+<p id="result_invite" style="color:red;"></p><br />
+<HR style="FILTER: alpha(opacity=100,finishopacity=0,style=2)" width="100%" color=#987cb9 SIZE=10><br />
+</body>
+<script> 
+    $("#login").click(function() {
+        var username_login = $("#username_login").val();
+        var password_login = $("#password_login").val(); 
+        if(username_login =="")
+       	{
+       		alert("手机号码不能为空");
+       	}
+ 
+        if(password_login.length<6 || password_login.length>20)
+       	{
+       		alert("密码长度在6-20字符之间");
+       	}
+        $.ajax({
+          type: 'POST',
+          url: 'http://api.yanketianxia.cn/user/login',
+          data: {username:username_login,password:password_login},
+          success: function(data) {
+        	var result=JSON.stringify(data.data);
+            $("#result_login").text(result);
+            $("#session_token").val(data.data.sessionToken); 
+          },
+          error: function(XMLHttpRequest) {
+        	  var result=JSON.stringify(XMLHttpRequest.responseText);
+        	  var realobj=eval('('+XMLHttpRequest.responseText+')');
+              $("#result_login").text(XMLHttpRequest.responseText);
+        	},
+		headers: {
+              "Access-Control-Allow-Origin" : "*"
+            }
+        });
+      });
+</script>
+</html>

@@ -1,0 +1,257 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>Spring Authorization Manager Demo</title>
+    <script src="http://lib.sinaapp.com/js/jquery/1.9.1/jquery-1.9.1.min.js"></script>
+</head>
+<body>
+
+手机号码：<input type="text" id="username_register"><br />
+密码：<input type="password" id="password_register"><br />
+短信验证码：<input type="text" id="sms_code"><br />
+邀请码：<input type="text" id="invite_code"><br />
+<input type="button" value="获取短信验证码" id="getSMS" /<br />
+<input type="button" value="注册" id="register" /><br />
+结果：
+<p id="result_sms" style="color:red;"></p></br>
+<p id="result_register" style="color:red;"></p><br />
+
+<HR style="FILTER: alpha(opacity=100,finishopacity=0,style=2)" width="100%" color=#987cb9 SIZE=10><br />
+
+手机号码：<input type="text" id="username_login"><br />
+密码：<input type="password" id="password_login"><br />
+<input type="button" value="登录" id="login" /><br />
+<input type="button" value="退出登录" id="logout" /><br />
+
+sessionToken：<input type="text" id="session_token"><br />
+<input type="button" value="获取邀请码" id="add" /><br />
+<input type="button" value="列出邀请码" id="list" /><br />
+结果：
+<p id="result_login" style="color:red;"></p></br>
+<p id="result_invite" style="color:red;"></p><br />
+<HR style="FILTER: alpha(opacity=100,finishopacity=0,style=2)" width="100%" color=#987cb9 SIZE=10><br />
+</body>
+<script>
+  $(document).ready(function(){
+    $("#getSMS").click(function() {
+      var username_register = $("#username_register").val();
+      $.ajax({
+        type: 'GET',
+        url: 'https://api.yanketianxia.com/sms/send/'+username_register ,
+        success: function(data) {
+        	var result=JSON.stringify(data.data);
+          $("#result_sms").text(result);
+        },
+        error: function(XMLHttpRequest) {
+      	  var result=JSON.stringify(XMLHttpRequest.responseText);
+      	  var realobj=eval('('+XMLHttpRequest.responseText+')');
+      	  $("#result_sms").text(XMLHttpRequest.responseText);
+      	    }
+      });
+    });
+    
+    $("#register").click(function() {
+        var username_register = $("#username_register").val();
+        var password_register = $("#password_register").val(); 
+        var sms_code = $("#sms_code").val();
+        var invite_code = $("#invite_code").val();
+        if(username_register =="")
+       	{
+       		alert("手机号码不能为空");
+       	}
+     /*    if(sms_code =="")
+       	{
+       		alert("短信验证码不能为空");
+       	} */
+        if(password_register.length<6 || password_register.length>20)
+       	{
+       		alert("密码长度在6-20字符之间");
+       	}
+        if(invite_code!=null && invite_code !="")
+        {
+        	if(sms_code!=null && sms_code !="")
+        		{
+			        $.ajax({
+			          type: 'POST',
+			          url: 'https://api.yanketianxia.com/user/register2',
+			          data: {username:username_register,password:password_register,sms_code:sms_code,invite_code:invite_code},
+			          success: function(data) {
+			        	var result=JSON.stringify(data.data);
+			            $("#result_register").text(result);
+			            $("#session_token").val(data.data.sessionToken);
+			          },
+			          error: function(XMLHttpRequest) {
+			        	  var result=JSON.stringify(XMLHttpRequest.responseText);
+			        	  var realobj=eval('('+XMLHttpRequest.responseText+')');
+			              $("#result_invite").text(XMLHttpRequest.responseText);
+			        	}
+			        });
+        		}else
+        			{
+	        			 $.ajax({
+	   			          type: 'POST',
+	   			          url: 'https://api.yanketianxia.com/user/register3',
+	   			          data: {username:username_register,password:password_register,invite_code:invite_code},
+	   			          success: function(data) {
+	   			        	var result=JSON.stringify(data.data);
+	   			            $("#result_register").text(result);
+	   			            $("#session_token").val(data.data.sessionToken);
+	   			          },
+	   			          error: function(XMLHttpRequest) {
+	   			        	  var result=JSON.stringify(XMLHttpRequest.responseText);
+	   			        	  var realobj=eval('('+XMLHttpRequest.responseText+')');
+	   			              $("#result_invite").text(XMLHttpRequest.responseText);
+	   			        	}
+	   			        });
+        			}
+        }else
+        {
+           $.ajax({
+	          type: 'POST',
+	          url: 'https://api.yanketianxia.com/user/register',
+	          data: {username:username_register,password:password_register,sms_code:sms_code},
+	          success: function(data) {
+	        	var result=JSON.stringify(data.data);
+	            $("#result_register").text(result);
+	            $("#session_token").val(data.data.sessionToken);
+	          },
+	          error: function(XMLHttpRequest) {
+	        	  var result=JSON.stringify(XMLHttpRequest.responseText);
+	        	  var realobj=eval('('+XMLHttpRequest.responseText+')');
+	              $("#result_invite").text(XMLHttpRequest.responseText);
+	        	}
+	        });
+        }
+      });
+  
+    $("#login").click(function() {
+        var username_login = $("#username_login").val();
+        var password_login = $("#password_login").val(); 
+        if(username_login =="")
+       	{
+       		alert("手机号码不能为空");
+       	}
+ 
+        if(password_login.length<6 || password_login.length>20)
+       	{
+       		alert("密码长度在6-20字符之间");
+       	}
+        $.ajax({
+          type: 'POST',
+          url: 'http://api.yanketianxia.com/user/login',
+          data: {username:username_login,password:password_login},
+          success: function(data) {
+        	var result=JSON.stringify(data.data);
+            $("#result_login").text(result);
+            $("#session_token").val(data.data.sessionToken); 
+          },
+          error: function(XMLHttpRequest) {
+        	  var result=JSON.stringify(XMLHttpRequest.responseText);
+        	  var realobj=eval('('+XMLHttpRequest.responseText+')');
+              $("#result_login").text(XMLHttpRequest.responseText);
+        	}
+        });
+      });
+    
+    
+    $("#add").click(function() {
+        var session_token = $("#session_token").val();
+        if(session_token =="")
+       	{
+       		alert("请先登录");
+       	}
+        $.ajax({
+          type: 'GET',
+          url: 'http://api.yanketianxia.com/invite/add',
+          success: function(data) {
+        	var result=JSON.stringify(data.data);
+            $("#result_invite").text(result);
+          },
+          error: function(XMLHttpRequest) {
+        	  var result=JSON.stringify(XMLHttpRequest.responseText);
+        	  var realobj=eval('('+XMLHttpRequest.responseText+')');
+              $("#result_invite").text(XMLHttpRequest.responseText);
+        	},
+            headers: {
+              "authorization" : session_token
+            }
+        });
+      });
+    
+    $("#list").click(function() {
+        var session_token = $("#session_token").val();
+        if(session_token =="")
+       	{
+       		alert("请先登录");
+       	}
+        $.ajax({
+          type: 'GET',
+          url: 'https://api.yanketianxia.com/invite/list',
+          success: function(data) {
+        	var result=JSON.stringify(data.data);
+            $("#result_invite").text(result);
+          },
+          error: function(XMLHttpRequest) {
+        	  var result=JSON.stringify(XMLHttpRequest.responseText);
+        	  var realobj=eval('('+XMLHttpRequest.responseText+')');
+              $("#result_invite").text(XMLHttpRequest.responseText);
+        	},
+            headers: {
+              "authorization" : session_token
+            }
+        });
+      });
+    
+    $("#logout").click(function() {
+      var session_token = $("#session_token").val();
+        if(session_token =="")
+       	{
+       		alert("请先登录");
+       	}
+      $.ajax({
+        type: 'DELETE',
+        url: 'https://api.yanketianxia.com/user/logout' ,
+        success: function(data) {
+        	var result=JSON.stringify(data.data);
+            $("#result_login").text(result);
+          },
+          error: function(XMLHttpRequest) {
+        	  var result=JSON.stringify(XMLHttpRequest.responseText);
+        	  var realobj=eval('('+XMLHttpRequest.responseText+')');
+              $("#result_login").text(XMLHttpRequest.responseText);
+        	},
+            headers: {
+              "authorization" : session_token
+            }
+      });
+    });
+    /* $("#login").click(function() {
+        var userid = $("#userid").val();
+        if (!userid) {
+          alert("请输入用户名");
+          return;
+        }
+        $.ajax({
+          type: 'GET',
+          url: 'http://localhost/yanke-invite/sms/send/1381059297' ,
+          data: "userid=" + userid,
+          success: function(data) {
+        	 
+            $("#result").text(data.data);
+            $("#userid").val('');
+            $("#token").val('');
+          },
+          error: function(XMLHttpRequest) {
+        	  var result=JSON.stringify(XMLHttpRequest.responseText);
+        	  
+        	  var realobj=eval('('+XMLHttpRequest.responseText+')');
+        	  $("#result").text(realobj.errorCode);
+              $("#result1").text(result);
+              $("#result2").text(XMLHttpRequest.responseText);
+        	    },
+        });
+      }); */
+    
+  });
+</script>
+</html>
